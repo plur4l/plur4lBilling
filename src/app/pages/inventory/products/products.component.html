@@ -1,0 +1,360 @@
+<div class="row">
+  <div class="col-md-12">
+    <nb-card class="inline-form-card">
+      <nb-card-header>Products</nb-card-header>
+      <nb-card-body>
+      <div class="row">
+        <!-- PRODUCT CODE-->
+        <div class="input-group mail-btn-group col-sm-4">
+          <span class="input-group-prepend">
+            <button class="btn btn-danger btn-icon input-group-text danger">
+              <i class="ion-search"></i>
+            </button>
+          </span>
+          <input type="text" class="form-control" style="border-color: #f3f3f3;" placeholder="Type the product code...">
+          <span class="input-group-append">
+            <button class="btn btn-danger input-group-text">
+              Find
+            </button>
+          </span>
+        </div>
+
+        <div class="input-group col-sm-7">
+          <input type="text" placeholder="product description..." class="form-control"/>
+        </div>
+      </div>
+
+
+
+      </nb-card-body>
+    </nb-card>
+  </div>
+</div>
+
+<!-- TABS CONTROL -->
+<div class="row">
+  <div class="col-md-12">
+    <nb-card size="medium" style="height: 600px;">
+      <nb-tabset fullWidth >
+
+
+        <nb-tab style="" tabTitle="Generals">
+
+          <div class="row" style="width: 100%; padding: 10px;">
+            <div class="col-lg-6">
+              <nb-card>
+                <nb-card-header>General data</nb-card-header>
+                <nb-card-body>
+
+                  <!-- AMBOS ROWS SE DEBERIAN CALCULAR DINAMICAMENTE -->
+                  <div class="row">
+
+                    <div class="form-group col-sm-12">
+                      <label for="txtLocation">Location</label>
+                      <input id="txtLocation" type="text" class="form-control"  placeholder="type physical location...">
+                    </div>
+
+                  </div>
+
+                  <div class="form-group validation-checkboxes row">
+                    <div class="form-group col-sm-6">
+                      <label for="txtDefDis">Default Discount</label>
+                      <input id="txtDefDis" type="text" class="form-control"  placeholder="type some discount value...">
+                    </div>
+                    <div class="form-group col-sm-6">
+                      <label for="txtIncPer">Increase Percentaje</label>
+                      <input id="txtIncPer" type="text" class="form-control"  placeholder="type an numeric value...">
+                    </div>
+                  </div>
+
+                  <div class="form-group validation-checkboxes row">
+                    <nb-checkbox status="success" class="col-sm-4">Is Active Item</nb-checkbox>
+                    <nb-checkbox status="warning" class="col-sm-4">Allow Discounts</nb-checkbox>
+                    <nb-checkbox status="warning" class="col-sm-4">Negative Stock</nb-checkbox>
+                  </div>
+
+
+                </nb-card-body>
+              </nb-card>
+            </div>
+            <div class="col-lg-6">
+              <nb-card>
+                <nb-card-header>Buy and sell data</nb-card-header>
+                <nb-card-body>
+
+                  <!-- AMBOS ROWS SE DEBERIAN CALCULAR DINAMICAMENTE -->
+                  <div class="row">
+
+                    <div class="form-group col-sm-6">
+                      <label for="CordPrice">C$ Sale Price</label>
+                      <input id="CordPrice" type="text" class="form-control"  placeholder="type the C$ price...">
+                    </div>
+
+                    <div class="form-group col-sm-6">
+                      <label for="DolPrice">$ Sale Price</label>
+                      <input id="DolPrice" type="text" class="form-control" placeholder="type the $ price...">
+                    </div>
+
+                  </div>
+                  <div class="row">
+
+                    <div class="form-group col-sm-6">
+                      <label for="CordCost">C$ Estimated Cost</label>
+                      <input id="CordCost" type="text" class="form-control"  placeholder="type the C$ estimated cost...">
+                    </div>
+
+                    <div class="form-group col-sm-6">
+                      <label for="DolCost">$ Estimated Cost</label>
+                      <input id="DolCost" type="text" class="form-control" placeholder="type the $ estimated cost...">
+                    </div>
+
+                  </div>
+
+
+                </nb-card-body>
+              </nb-card>
+            </div>
+          </div>
+
+        </nb-tab>
+        <nb-tab style="" tabTitle="Catalog">
+
+          <div class="row" style="width: 100%; padding: 10px;">
+            <div class="col-lg-6">
+              <nb-card style="position: relative;">
+                <nb-card-header>Sales information</nb-card-header>
+                <nb-card-body>
+
+                  <!-- Unidad Medida, Impuestos, tipo producto, descripcion corta, -->
+                  <div class="row">
+                      <div class="form-group col-sm-12">
+                        <label for="selTaxes">Taxes</label>
+                      <!--  <ng-select id="selTaxes"
+                           [items]="people3$ | async" bindLabel="name"
+                           [addTag]="true" [multiple]="true"
+                           [hideSelected]="true" [loading]="people3Loading"
+                           [typeahead]="people3input$" [(ngModel)]="selectedPersons">
+                        </ng-select> -->
+                        <ng-select
+                                [items]="people3$ | async"
+                                [multiple]="true"
+                                [closeOnSelect]="false"
+                                [searchable]="false"
+                                bindLabel="name"
+                                placeholder="Select the respective taxes..."
+                                [(ngModel)]="selectedPersons">
+                        </ng-select>
+
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="form-group col-sm-12">
+                      <label for="txtshortDes">Short Item Description</label>
+                      <input id="txtshortDes" type="text" class="form-control"  placeholder="type an short description...">
+                    </div>
+
+                  </div>
+
+
+                </nb-card-body>
+              </nb-card>
+            </div>
+
+            <div class="col-lg-6" style=" " >
+              <nb-card >
+                <nb-card-header>Warehouse information</nb-card-header>
+                <nb-card-body style="" >
+                  <!-- Unidad Medida, Impuestos, tipo producto, descripcion corta, -->
+                  <div class="row">
+                      <div class="form-group col-sm-12">
+                          <label for="selUOM">Unit of measure</label>
+                          <ng-select id="selUOM"
+                             [items]="people3$ | async" bindLabel="name"
+                             [addTag]="true" [multiple]="false"
+                             [hideSelected]="true" [loading]="people3Loading"
+                             [typeahead]="people3input$" [(ngModel)]="selectedPersons">
+                          </ng-select>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="form-group col-sm-12" >
+                      <label for="cbProductType">Product Type</label>
+                      <ng-select style="position: relative;z-index: 1;"
+                              id="cbProductType"  [items]="people3$ | async"
+                              [multiple]="false"  [closeOnSelect]="false"
+                              [searchable]="false"  bindLabel="name"
+                              placeholder="Select the product type..."  [(ngModel)]="selectedPersons">
+                      </ng-select>
+                    </div>
+                  </div>
+                </nb-card-body>
+              </nb-card>
+            </div>
+
+
+
+          </div>
+
+          <div class="row" style="width: 100%; padding: 10px;">
+            <div class="col-md-6" style=" " >
+              <nb-card >
+                <nb-card-header>Real Time validators</nb-card-header>
+                <nb-card-body style="" >
+                  <!-- Unidad Medida, Impuestos, tipo producto, descripcion corta, -->
+                  <div class="row">
+
+                      <div class="form-group col-sm-6">
+                          <label for="txtReorder">Item Reorder</label>
+                          <input id="txtReorder" type="text" class="form-control"  placeholder="type reorder value...">
+                    </div>
+
+                    <div class="form-group col-sm-6" >
+                      <label for="txtMinStock">Minimal Stock</label>
+                      <input id="txtMinStock" type="text" class="form-control"  placeholder="type minimum stock value...">
+                    </div>
+
+                  </div>
+                </nb-card-body>
+              </nb-card>
+            </div>
+
+
+          </div>
+
+        </nb-tab>
+        <nb-tab style="" tabTitle="Inventory">
+
+                    <div class="row" style="width: 100%; padding: 10px;">
+                      <div class="col-lg-5">
+                        <nb-card style="position: relative;">
+                          <nb-card-header>Inventory Details</nb-card-header>
+                          <nb-card-body>
+
+                            <div class="row">
+                              <div class="col-md-6">
+                                <span style="display: table; margin: 0 auto; margin-top: 7px;">Stock in Units</span>
+                              </div>
+                              <div class="col-md-6">
+                                <div class="form-group  input-group-sm">
+                                  <input id="txtUnitCost" type="text" class="form-control"  placeholder="0">
+                                </div>
+                              </div>
+                            </div>
+
+                            <div class="row">
+                              <div class="col-md-6">
+                                <span style="display: table; margin: 0 auto; margin-top: 7px;">Stock in Value C$</span>
+                              </div>
+                              <div class="col-md-6">
+                                <div class="form-group  input-group-sm">
+                                  <input id="txtUnitCost" type="text" class="form-control"  placeholder="0">
+                                </div>
+                              </div>
+                            </div>
+
+                            <div class="row">
+                              <div class="col-md-6">
+                                <span style="display: table; margin: 0 auto; margin-top: 7px;">Stock in Value $</span>
+                              </div>
+                              <div class="col-md-6">
+                                <div class="form-group  input-group-sm">
+                                  <input id="txtUnitCost" type="text" class="form-control"  placeholder="0">
+                                </div>
+                              </div>
+                            </div>
+
+                            <div class="row">
+                              <div class="col-md-6">
+                                <span style="display: table; margin: 0 auto; margin-top: 7px;">Average Cost C$</span>
+                              </div>
+                              <div class="col-md-6">
+                                <div class="form-group  input-group-sm">
+                                  <input id="txtUnitCost" type="text" class="form-control"  placeholder="0">
+                                </div>
+                              </div>
+                            </div>
+
+                            <div class="row">
+                              <div class="col-md-6">
+                                <span style="display: table; margin: 0 auto; margin-top: 7px;">Average Cost $</span>
+                              </div>
+                              <div class="col-md-6">
+                                <div class="form-group  input-group-sm">
+                                  <input id="txtUnitCost" type="text" class="form-control"  placeholder="0">
+                                </div>
+                              </div>
+                            </div>
+
+                            <div class="row">
+                              <div class="col-md-6">
+                                <span style="display: table; margin: 0 auto; margin-top: 7px;">Last Purchase Price</span>
+                              </div>
+                              <div class="col-md-6">
+                                <div class="form-group  input-group-sm">
+                                  <input id="txtUnitCost" type="text" class="form-control"  placeholder="0">
+                                </div>
+                              </div>
+                            </div>
+
+                            <div class="row">
+                              <div class="col-md-6">
+                                <span style="display: table; margin: 0 auto; margin-top: 7px;">Last Sale Price</span>
+                              </div>
+                              <div class="col-md-6">
+                                <div class="form-group  input-group-sm">
+                                  <input id="txtUnitCost" type="text" class="form-control"  placeholder="0">
+                                </div>
+                              </div>
+                            </div>
+
+                          </nb-card-body>
+                        </nb-card>
+                      </div>
+
+                      <div class="col-md-7">
+                        <nb-card >
+                          <nb-card-header>Warehouses</nb-card-header>
+                          <nb-card-body>
+                        <table class="table">
+
+                            <thead>
+                              <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Code</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Items</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <th scope="row">1</th>
+                                <td>001</td>
+                                <td>Managua</td>
+                                <td>1,239.00</td>
+                              </tr>
+                              <tr>
+                                <th scope="row">2</th>
+                                <td>002</td>
+                                <td>Juigalpa</td>
+                                <td>538.00</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </nb-card-body>
+                      </nb-card >
+                      </div>
+                    </div>
+        </nb-tab>
+        <nb-tab style="padding: 15px;" tabTitle="Complementary">
+
+        </nb-tab>
+        <nb-tab style="padding: 15px;" tabTitle="Substitutes">
+
+        </nb-tab>
+        <nb-tab style="padding: 15px;" tabTitle="Historics">
+        
+        </nb-tab>
+      </nb-tabset>
+    </nb-card>
+  </div>
+</div>
