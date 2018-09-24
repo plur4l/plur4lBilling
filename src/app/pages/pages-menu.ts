@@ -22,7 +22,7 @@ export const MENU_ITEMS: NbMenuItem[] = [
     ],
   },
   {
-    title: 'Inventor',
+    title: 'Inventory',
     icon: 'fas fa-cubes',
     link: '/pages/inventory',
     children: [
