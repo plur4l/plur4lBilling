@@ -1,3 +1,99 @@
-<p>
-  customers works!
-</p>
+<div class="row">
+    <div class="col-md-6">
+        <nb-card>
+            <nb-card-body>
+
+                <nb-actions size="medium">
+                    <nb-action icon="nb-menu" (click)="algo()"></nb-action>
+
+                    <nb-action icon="fas fa-save"></nb-action>
+
+                    <nb-action icon="nb-email"></nb-action>
+                    <nb-action disabled icon="nb-notifications"></nb-action>
+                    <nb-action icon="nb-gear"></nb-action>
+                </nb-actions>
+            </nb-card-body>
+        </nb-card>
+    </div>
+</div>
+
+
+
+<div class="row">
+    <div class="col-md-6">
+        <nb-card style="width: 100%;">
+            <nb-card-header>Customer Area</nb-card-header>
+            <nb-card-body style="width: 100%; padding: 10px;">
+                <div class="row">
+                    <div class="form-group col-sm-6">
+                        <label for="txtcustomerID">Customer ID</label>
+
+                        <input id="txtcustomerID" type="text" placeholder="Customer ID" class="form-control" />
+                    </div>
+                    <div class="form-group validation-checkboxes col-md-6 row">
+                        <nb-checkbox style="margin-top: 32px" status="success" class="col-sm-4">Active</nb-checkbox>
+                        <nb-checkbox style="margin-top: 32px" status="success" class="col-sm-6">Exonerado</nb-checkbox>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="form-group col-sm-6">
+                        <label for="txtshortname">Short Name</label>
+                        <input id="txtshortname" type="text" placeholder="Short Name" class="form-control" />
+                    </div>
+                    <div class="form-group col-sm-6">
+                        <label for="txtruc">RUC</label>
+                        <input id="txtruc" type="text" placeholder="RUC" class="form-control" />
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="form-group col-sm-12">
+                        <label for="txtlongname">Long Name</label>
+                        <input id="txtlongname" type="text" placeholder="Long Name" class="form-control" />
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="form-group col-sm-6">
+                        <label for="txtphone">Phone Number</label>
+                        <input id="txtphone" type="text" placeholder="Phone Number" class="form-control" />
+                    </div>
+                    <div class="form-group col-sm-6">
+                        <label for="txtcel">Cel Number</label>
+                        <input id="txtcel" type="text" placeholder="Cel Number" class="form-control" />
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="form-group col-sm-12">
+                        <label for="txtaddress">Address</label>
+                        <textarea id="txtaddress" rows="3" placeholder="Address" class="form-control"></textarea>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="form-group col-sm-12">
+                        <label for="txtcontactname">Contact Name</label>
+                        <input id="txtcontactname" type="text" placeholder="Contact Name" class="form-control" />
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="form-group col-sm-6">
+                        <label for="txtphone">Contact Phone Number</label>
+                        <input id="txtphone" type="text" placeholder="Phone Number" class="form-control" />
+                    </div>
+                    <div class="form-group col-sm-6">
+                        <label for="txtcel">Contact Cel Number</label>
+                        <input id="txtcel" type="text" placeholder="Cel Number" class="form-control" />
+                    </div>
+                </div>
+
+
+
+            </nb-card-body>
+        </nb-card>
+
+    </div>
+</div>
